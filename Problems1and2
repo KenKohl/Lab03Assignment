@@ -1,0 +1,36 @@
+Ken Kohlhof
+CSC 229 Assignment 3
+
+Problem 1
+
+public class NewClass {
+   public static int getLargest(int arr[], int sz) {
+      int iterate1 = 0; --------------------- 1 step
+      int iterate2 = 0; --------------------- 1 step
+      int largest = 0; -----------------------1 step
+      while (iterate1 < sz – 1) { ----------------------n *(n+1)/2  step
+         iterate2++;----------------n * (n+1)/2-1  step
+          if (iterate2 == sz){ --------------------------- n * (n+1)/2 -1step
+             iterate1++;--------------------- n-1 step
+             iterate2 = iterate1; ----------------- n-1 step
+             continue; ----------- n-1 step
+         }
+         int product = arr[iterate1] * arr[iterate2];--------1 step
+         if (product > largest)-----------1 step
+            largest = product;---------1 step
+      }
+      return largest;-----------1 step
+   }
+}
+
+1+1+1+(n*(n+1)/2) + (n*(n+1)/2-1) + (n*(n+1)/2-1) + (n-1) + (n-1) + (n-1) + 1 + 1 + 1 +1
+
+7+((3n^2+6n)/6-5)
+
+O(n^2)
+
+Problem 2:
+
+So to tackle this problem I would want to take line up the bags and mark them 1-20. I would take 1 M&M out of the first bag, 2 out of the second, 3 out of the third, and so on. 
+Then I would want to weigh all the M&Ms I have taken out. I believe that once we weigh the M&M’s we would be looking for how much off the weight is from 210 (using n*(n+1)/2 formula, or in this case 20*(20+1)/2 ). 
+So if the weight of it was off by .5, that means the M&M bag with the heavier M&M’s in it would be bag 5. If the M&M pile was off by 1.5 then it would be from bag 15.
